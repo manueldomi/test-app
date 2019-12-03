@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
 
 import { addClient, listClients } from "../../actions/clients";
 import { addVenue } from "../../actions/venues";
-import { ToastContainer, toast } from "react-toastify";
 
 import AddField from "./AddField";
 import AddInput from "./AddInput";
-
 import styles from "./styles";
 
 const initalState = {
@@ -23,7 +22,6 @@ const ListHeader = (props) => {
   const [inputs, setInput] = useState(initalState);
 
   const addClient = () => {
-    debugger;
     const { addClient, listClients } = props;
     const { name, email, lastName, firstName, age } = inputs;
     const body = { name, email, lastName, firstName, age };
@@ -48,6 +46,7 @@ const ListHeader = (props) => {
 
   const [companyInputActive, setCompanyInput] = useState(false);
   const renderClientInput = () => {
+    const { name, email, firstName, lastName, age } = inputs;
     if (clientInputActive)
       return (
         <AddInput
@@ -56,11 +55,11 @@ const ListHeader = (props) => {
           onInputChange={(e) =>
             setInput({ ...inputs, [e.target.name]: e.target.value })
           }
-          name={inputs.name}
-          email={inputs.email}
-          firstName={inputs.firstName}
-          lastName={inputs.lastName}
-          age={inputs.age}
+          name={name}
+          email={email}
+          firstName={firstName}
+          lastName={lastName}
+          age={age}
           onAcceptPress={addClient}
         />
       );

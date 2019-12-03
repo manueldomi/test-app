@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { Colors } from "../../helpers";
 import { clients } from "../../selectors/clientsSelector";
 import { venues } from "../../selectors/venuesSelector";
 import { listClients } from "../../actions/clients";
 import { listVenues } from "../../actions/venues";
 import ListItem from "./ListItem";
 import FilterBar from "./FilterBar";
-import MockBackend from "../../MockBackend";
+
 import styles from "./styles";
 
 const ClientsList = (props) => {
@@ -32,7 +31,10 @@ const ClientsList = (props) => {
   const renderItems = () => {
     const clientsList = [...clients].filter(
       (element) =>
-        !element.email.search(searchInput) || !element.name.search(searchInput)
+        (!element.email.search(searchInput) ||
+          !element.name.search(searchInput)) &&
+        element.age >= valueSlide[0] &&
+        element.age <= valueSlide[1]
     );
 
     const render = clientsList.map((client) => (

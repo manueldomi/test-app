@@ -3,6 +3,5 @@ export const clients = (state) => {
 };
 
 export const favourites = (state) => {
-  debugger;
   return [...state.clients.favourites];
 };

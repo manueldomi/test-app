@@ -42,9 +42,9 @@ const styles = {
   text: {
     color: Colors.primary_dark,
     margin: 0,
-    width: "20%",
+    width: "30%",
     textAlign: "center",
-    marginLeft: "40%"
+    marginLeft: "35%"
   },
   button: {
     backgroundColor: Colors.primary_dark,

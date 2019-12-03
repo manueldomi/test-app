@@ -23,13 +23,11 @@ const ListItem = ({
   addFavourite,
   removeFavourite
 }) => {
-  debugger;
   const [favouritesArray, updateFavourites] = useState(favourites);
   const listFavourites = () => {
     getFavourites(data.id);
   };
   const onMediaPress = (venueId, isFavourite) => {
-    debugger;
     isFavourite
       ? removeFavourite(data.id, venueId, () => getFavourites(data.id))
       : addFavourite(data.id, venueId, () => getFavourites(data.id));

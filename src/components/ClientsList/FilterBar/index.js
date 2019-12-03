@@ -6,7 +6,7 @@ import styles from "./styles";
 
 const useStyles = makeStyles({
   root: {
-    marginTop: "3%",
+    marginTop: "5%",
     width: "70%",
     height: "100%"
   }
@@ -28,13 +28,20 @@ const FilterBar = ({ onInputChange, value, valueSlide, onSlideChange }) => {
         }}
       ></input>
       <div style={styles.sliderContainer}>
-        <Slider
-          onChange={onSlideChange}
-          className={classes.root}
-          value={valueSlide}
-          valueLabelDisplay="auto"
-          aria-labelledby="range-slider"
-        />
+        <div style={styles.sliderTextContainer}>
+          <p>
+            Age filter: {valueSlide[0]}-{valueSlide[1]}
+          </p>
+        </div>
+        <div style={styles.sliderWrapper}>
+          <Slider
+            onChange={onSlideChange}
+            className={classes.root}
+            value={valueSlide}
+            valueLabelDisplay="off"
+            aria-labelledby="range-slider"
+          />
+        </div>
       </div>
     </div>
   );

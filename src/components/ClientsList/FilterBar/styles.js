@@ -4,16 +4,31 @@ import { Colors, Dimensions } from "../../../helpers";
 
 const styles = {
   container: {
+    zIndex: 1,
     backgroundColor: Colors.primary,
     width: "100%",
-    height: "12%",
+    height: "20%",
     display: "flex",
     flexDirection: "row"
   },
   sliderContainer: {
-    width: "30%",
+    paddingRight: "2%",
+    display: "flex",
+    flexDirection: "row",
+    width: "60%",
     backgroundColor: Colors.white,
     height: "100%"
+  },
+  sliderWrapper: {
+    width: "50%",
+    height: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column"
+  },
+  sliderTextContainer: {
+    width: "60%"
   },
   iconContainer: {
     backgroundColor: Colors.white,

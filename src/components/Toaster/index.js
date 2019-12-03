@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { connect } from "react-redux";
 import "react-toastify/dist/ReactToastify.css";
 
-import { connect } from "react-redux";
-
 import { error, errorMessage } from "../../selectors/errorsSelector";
-
 import { cleanErrors } from "../../actions/global";
 
 const Toaster = ({ error, errorMessage, cleanErrors }) => {

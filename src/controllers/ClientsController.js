@@ -40,9 +40,7 @@ class ClientsController {
 
   getFavourites = async (clientId) => {
     try {
-      debugger;
       const result = await MockBackend.getClientFavoriteVenues(clientId);
-      debugger;
       return result;
     } catch (error) {
       throw error;
@@ -51,12 +49,10 @@ class ClientsController {
 
   addFavourite = async (clientId, venueId) => {
     try {
-      debugger;
       const result = await MockBackend.addFavoriteVenueToClient(
         clientId,
         venueId
       );
-      debugger;
       return result;
     } catch (error) {
       throw error;
@@ -64,12 +60,10 @@ class ClientsController {
   };
   removeFavourite = async (clientId, venueId) => {
     try {
-      debugger;
       const result = await MockBackend.removeFavoriteVenueFromClient(
         clientId,
         venueId
       );
-      debugger;
       return result;
     } catch (error) {
       throw error;

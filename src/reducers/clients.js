@@ -8,7 +8,6 @@ const initialState = {
 };
 
 const clientsReducer = (state = initialState, action) => {
-  debugger;
   switch (action.type) {
     case "CLEAN_ERRORS":
       return { ...state, error: false, errorMessage: "" };

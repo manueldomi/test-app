@@ -22,7 +22,6 @@ const FavouritesList = ({ data, venues, onPress }) => {
         <p style={styles.text}>{favourite.name}</p>
       </div>
     ));
-    debugger;
     if (render.length === 0)
       return (
         <div style={styles.favouriteWrapper}>

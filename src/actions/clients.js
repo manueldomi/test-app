@@ -115,8 +115,6 @@ export const addClient = (body, callback) => async (dispatch) => {
     dispatch(addClientSuccess(client));
     callback && callback();
   } catch (error) {
-    const err = error;
-    debugger;
     dispatch(addClientError(error.message));
   }
 };
@@ -125,11 +123,9 @@ export const getFavourites = (id, callback) => async (dispatch) => {
   dispatch(getFavouritesRequest());
   try {
     const favourites = await CliensController.getFavourites(id);
-    debugger;
     dispatch(getFavouritesSuccess(favourites));
     callback && callback();
   } catch (error) {
-    debugger;
     dispatch(getFavouritesError(error.message));
   }
 };
@@ -140,11 +136,9 @@ export const addFavourite = (clientId, venueId, callback) => async (
   dispatch(addFavouriteRequest());
   try {
     const favourite = await CliensController.addFavourite(clientId, venueId);
-    debugger;
     dispatch(addFavouriteSuccess(favourite));
     callback && callback();
   } catch (error) {
-    debugger;
     dispatch(addFavouriteError(error.message));
   }
 };
@@ -155,11 +149,9 @@ export const removeFavourite = (clientId, venueId, callback) => async (
   dispatch(removeFavouriteRequest());
   try {
     const favourite = await CliensController.removeFavourite(clientId, venueId);
-    debugger;
     dispatch(removeFavouriteSuccess(favourite));
     callback && callback();
   } catch (error) {
-    debugger;
     dispatch(removeFavouriteError(error.message));
   }
 };
